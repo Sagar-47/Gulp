@@ -1,0 +1,12 @@
+Sr. No.	Model Details		Chi square		Comments
+1)	Optimized		139738.568349 		[  4.34182906e-02,   4.57537432e+04,   5.24669173e+00,1.08203520e+00]
+
+2)	Initial guess		1221478.48796		[0.03,18000.0,5.00,17.0]
+
+3)	Only ZnS interaction	520067.697359		12210.4781333, 48.2508239433 - calculated para
+	with Initial guess	
+
+4)	Only ZnS interaction	146214.80180612733	[  4.29781452e-02,   4.78319104e+03,   5.46689153e+00, 3.80373948e+00]
+	optimized	
+
+

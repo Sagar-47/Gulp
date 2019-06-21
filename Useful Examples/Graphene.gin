@@ -1,0 +1,25 @@
+phon nofreq 
+cell
+   2.46   2.46   50.0  90.000000  90.000000  60.000000
+fractional
+C   0.000000   0.000000   0.000000 
+C   0.333333   0.333333   0.000000 
+species
+C 0.0
+
+forceconst 
+C C 45.3125 1.0 0.0 1.5
+C C 6.3125  1.0 1.5 2.5
+
+three
+C core C core C core 5.324426 120 0.0 1.5 0.0 1.5 0.0 2.5
+#Zn core S shell S shell 0.778 109.47 0.0 15 0.0 15 0.0 15
+
+#twist + 1
+
+shrink
+10 1 1
+dispersion 1 500
+0. 0. 0. to 0.5 0.5 0. to 0.333333 0.666667 0. to 0. 0. 0.
+
+output phon abc

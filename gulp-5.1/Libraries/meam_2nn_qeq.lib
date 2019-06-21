@@ -1,0 +1,170 @@
+#
+#  Modified Embedded Atom Model parameters: MEAM-2NN version with QEq
+#
+#  This library contains parameters for the combination of MEAM-2NN with
+#  charge equilibration via QEq.
+#
+#  Parameters for Li-Mn-O system:
+#
+#  E. Lee, K.-R. Lee and B.-J. Lee, J. Phys. Chem. C, 121, 13008 (2017)
+#
+#  For the effective two-body potential, Baskes, an iterative solution of the
+#  equations is used. Here the number of iterations is set to 12, which seems
+#  to converge the energy and forces to the precision output by GULP for most
+#  cases, but increasing this value will ensure further convergence if issues
+#  are encountered. 
+#
+#  NB: The cutoff for the baskes twobody potential is set uniformly at 8 Angstrom
+#      with a taper function applied. This may differ from the original 
+#      implementation. 
+#
+species
+O  core  0.0
+Li core  0.0
+Mn core  0.0
+#
+#  Keywords
+#
+keyword eembond molq sm allbonds qiter
+#
+#  QEq parameters
+#
+smelectronegativity qmax
+Li   90.50 75.00 10.0 0.00 0.0  50.00 -1.0
+Mn  214.88 71.65 1.52 0.91 0.0 210.00 -2.0
+O   221.37 65.88 2.39 0.00 0.0 205.63 -2.0
+smelectronegativity qmin
+Li -109.50 75.00 10.0 0.00 0.0  50.00  1.0
+Mn -225.12 71.65 1.52 0.91 0.0 210.00  2.0 
+O  -201.15 65.88 2.39 0.00 0.0 205.63  2.0
+smelectronegativity qrange
+Li   -9.50 25.00 10.0 0.00 0.0   0.00 -1.0  1.0
+Mn   14.88 21.65 1.52 0.91 0.0  10.00 -2.0 -1.0
+Mn   -5.12 11.65 1.52 0.91 0.0   0.00 -1.0  1.0
+Mn  -25.12 21.65 1.52 0.91 0.0  10.00  1.0  2.0
+O    21.37 15.88 2.39 0.00 0.0   5.63 -2.0 -1.0
+O    10.11 10.25 2.39 0.00 0.0   0.00 -1.0  1.0
+O    -1.15 15.88 2.39 0.00 0.0   5.63  1.0  2.0
+#
+#  Specify self many body interactions. For alloys, cross terms need
+#  to be explicitly added.
+#
+#  A taper of 0.1 Angstroms is used here, as per the literature.
+#
+manybody
+Mn core Mn core  0.1 0.0 4.8
+Mn core Li core  0.1 0.0 4.8
+Li core Li core  0.1 0.0 4.8
+Mn core O  core  0.1 0.0 4.8
+Li core O  core  0.1 0.0 4.8
+O  core O  core  0.1 0.0 4.8
+#
+#  MEAM functional - here the parameter is A*E0 from the original paper
+#
+meam_functional baskes 3 
+Mn core  2.900 0.70 10.882918
+         1.00  4.00 -3.00 -4.00
+Li core  1.650 0.95  6.1719215
+         1.00  2.30  5.00   0.5
+O  core  2.56  1.44 13.037404
+         1.00  0.10  0.11   0.0
+#
+#  MEAM density
+#
+meam_density baskes 3
+Mn core  1.0 4.30 2.530 
+         1.0 1.00 2.530 
+         1.0 2.00 2.530 
+         1.0 6.50 2.530 
+Li core  0.5 1.65 3.020
+         0.5 1.00 3.020
+         0.5 4.00 3.020
+         0.5 1.00 3.020
+O  core 12.0 5.47 1.210
+        12.0 5.30 1.210
+        12.0 5.18 1.210
+        12.0 5.57 1.210
+#
+#  MEAM density type
+#
+meam_rhotype t24 exponential
+#
+#  Effective twobody potential - depends on choice of reference phase
+#
+#  NB: Twobody potential needs to be cut off at nearest neighbour
+#
+#  BCC structures 
+#
+baskes 12 bcc
+Mn core Mn core 2.900 0.70 5.73458 2.530 8 1.0 0.00 0.0 8.0
+                5.6070 1.15470 5.6070 1.15470
+Li core Li core 1.650 0.95 3.09826 3.020 8 1.0 0.05 0.0 8.0
+                5.6070 1.15470 5.6070 1.15470
+#
+#  Dimer structures
+#
+baskes 12 dimer
+O  core O  core 2.560 1.44 6.8800 1.210 1 1.0 0.00 0.0 8.0
+                0.0 1.0000 0.0 1.0000
+#
+#  Alloys
+#
+baskes 12 bcc
+Li core Mn core 1.7750 1.00 4.3730569 2.6961 8 0.50 0.025 0.0 8.0
+                0.0 1.15470 5.6067 1.15470
+baskes 12 nacl
+Li core O  core 1.6836 1.00 7.3151056 1.9500 6 0.50 0.070 0.0 8.0
+                0.0 1.4142 0.0 1.4142
+Mn core O  core 1.7829 1.00 5.2936439 2.1276 6 0.50 0.100 0.0 8.0
+                0.0 1.4142 0.1678456 1.4142
+#
+#  Screening functions - pure metals
+#
+meam_screen 
+Mn core Mn core Mn core 0.16 2.80
+Li core Li core Li core 0.16 2.80
+O  core O  core O  core 2.00 2.80
+#
+#  Screening functions - alloys
+#
+#  Li-Mn
+#
+Li core Mn core Mn core 0.16 2.80
+Mn core Li core Li core 0.20 2.00
+Mn core Mn core Li core 0.16 2.80
+Li core Mn core Li core 0.16 2.80
+#
+#  Li-O
+#
+Li core O  core O  core 0.30 1.55
+O  core Li core Li core 1.00 1.55
+O  core O  core Li core 0.60 2.15
+Li core O  core Li core 0.70 1.35
+#
+#  Mn-O
+#
+Mn core O  core O  core 0.80 2.80
+O  core Mn core Mn core 4.00 5.00
+O  core O  core Mn core 0.80 2.80
+Mn core O  core Mn core 3.00 4.00
+#
+#  Screening functions for ternary cases
+#
+#  Li-Mn-O
+#
+Li core Mn core O  core 4.00 5.00
+Mn core Li core O  core 0.20 5.00
+O  core Li core Mn core 4.00 5.00
+#
+#  Set radii to allow bonds to be found
+#
+element
+cova Li   0.980
+cova O    1.030 
+end
+nobond Li Li
+nobond Li Mn
+nobond Mn Mn
+nobond O  O
+
+cutp 4.8 mdf 1.0

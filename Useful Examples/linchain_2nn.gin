@@ -1,0 +1,15 @@
+phon nofreq 
+cell
+   1.0   50.0   50.0  90.000000  90.000000  90.000000
+fractional
+Mg   0.000000   0.000000   0.000000 
+species
+Mg 0.0
+forceconst
+Mg Mg 1 0.2 0 1.5
+Mg Mg 0.5 0.1 1.51 2.5
+shrink
+10 1 1
+dispersion 1 100
+0.0 0.0 0.0 to 0.5 0.0 0.0
+output phon linchain_2nn

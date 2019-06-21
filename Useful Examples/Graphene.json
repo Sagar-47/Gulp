@@ -1,0 +1,60 @@
+
+
+[
+   {
+      "phon nofreq ": "cell"
+   },
+   {
+      "phon nofreq ": "   2.46   2.46   50.0  90.000000  90.000000  60.000000"
+   },
+   {
+      "phon nofreq ": "fractional"
+   },
+   {
+      "phon nofreq ": "C   0.000000   0.000000   0.000000 "
+   },
+   {
+      "phon nofreq ": "C   0.333333   0.333333   0.000000 "
+   },
+   {
+      "phon nofreq ": "species"
+   },
+   {
+      "phon nofreq ": "C 0.0"
+   },
+   {
+      "phon nofreq ": "forceconst "
+   },
+   {
+      "phon nofreq ": "C C 45.3125 1.0 0.0 1.5"
+   },
+   {
+      "phon nofreq ": "C C 6.3125  1.0 1.5 2.5"
+   },
+   {
+      "phon nofreq ": "three"
+   },
+   {
+      "phon nofreq ": "C C C 5.324426 120 0.021914 0.014 5.6 7.0 9.0 0.0 1.5 0.0 1.5 0.0 2.5"
+   },
+   {
+      "phon nofreq ": "#twist + 1"
+   },
+   {
+      "phon nofreq ": "shrink"
+   },
+   {
+      "phon nofreq ": "10 1 1"
+   },
+   {
+      "phon nofreq ": "dispersion 1 500"
+   },
+   {
+      "phon nofreq ": "0. 0. 0. to 0.5 0.5 0. to 0.333333 0.666667 0. to 0. 0. 0."
+   },
+   {
+      "phon nofreq ": "output phon abc"
+   }
+]
+
+
